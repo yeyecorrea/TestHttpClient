@@ -51,7 +51,8 @@ namespace TestHttpClient
             var respuesta = await client.GetAsync(urlKey);
             var contenido = await respuesta.Content.ReadAsStringAsync();
             logoutData = JsonConvert.DeserializeObject<Dictionary<string, string>>(contenido);
-            key = utilidad.GetRequestLogin(logoutData);
+            utilidad.GetRequestLogin(logoutData);
+            key = null;
             var validateKey = key == null ? validKey = false : validKey = true;
             return validateKey;
         }

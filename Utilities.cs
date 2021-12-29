@@ -31,6 +31,15 @@ namespace TestHttpClient
             }
             return key;
         }
-        
+
+        public void GetClient(Dictionary<string, string> data)
+        {
+            foreach (var index in data)
+            {
+                
+            }
+
+        }
+
     }
 }

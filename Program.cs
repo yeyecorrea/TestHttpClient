@@ -94,7 +94,17 @@ namespace TestHttpClient
                 }
                 else if (numberOption == "5")
                 {
-                    await iniciar.LogoutSesion();
+                    Console.WriteLine($"Cerrando la sesion usuario: {username}");
+                    var validSesion = await iniciar.LogoutSesion();
+                    if (validSesion)
+                    {
+                        Console.WriteLine("No has cerrado sesion intenta nuevamente");
+                        numberOption = "5";
+                    }
+                    else
+                    {
+                        numberOption = "6";
+                    }
                 }
                 else if (numberOption == "6")
                 {
